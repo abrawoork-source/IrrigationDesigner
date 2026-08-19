@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+
+  <!-- App -->
+  <data name="AppTitle"><value>Irrigation Design Pro</value></data>
+  <data name="AppSubtitle"><value>Professional Irrigation Network Design Tool</value></data>
+
+  <!-- Navigation -->
+  <data name="Nav_Dashboard"><value>Dashboard</value></data>
+  <data name="Nav_WaterSource"><value>Water Source</value></data>
+  <data name="Nav_Zones"><value>Zones</value></data>
+  <data name="Nav_NozzleDatabase"><value>Nozzle Database</value></data>
+  <data name="Nav_DripDatabase"><value>Drip Database</value></data>
+  <data name="Nav_Heads"><value>Heads Schedule</value></data>
+  <data name="Nav_PipeNetwork"><value>Pipe Network</value></data>
+  <data name="Nav_Calculations"><value>Calculations</value></data>
+  <data name="Nav_Evaluation"><value>Design Check</value></data>
+  <data name="Nav_Reports"><value>Reports &amp; Export</value></data>
+
+  <!-- Common -->
+  <data name="Btn_Save"><value>Save</value></data>
+  <data name="Btn_Cancel"><value>Cancel</value></data>
+  <data name="Btn_Add"><value>Add</value></data>
+  <data name="Btn_Edit"><value>Edit</value></data>
+  <data name="Btn_Delete"><value>Delete</value></data>
+  <data name="Btn_Import"><value>Import CSV</value></data>
+  <data name="Btn_Export"><value>Export</value></data>
+  <data name="Btn_Calculate"><value>Calculate</value></data>
+  <data name="Btn_DesignCheck"><value>⚙ Design Check</value></data>
+  <data name="Btn_ExportJson"><value>Export Project (JSON)</value></data>
+  <data name="Btn_ImportJson"><value>Import Project (JSON)</value></data>
+  <data name="Btn_LoadSample"><value>Load Sample Project</value></data>
+  <data name="Btn_NewProject"><value>New Project</value></data>
+  <data name="Btn_ExportExcel"><value>Export Excel</value></data>
+  <data name="Btn_ExportPdf"><value>Export PDF</value></data>
+
+  <!-- Labels -->
+  <data name="Lbl_ProjectName"><value>Project Name</value></data>
+  <data name="Lbl_Units"><value>Units</value></data>
+  <data name="Lbl_Notes"><value>Notes</value></data>
+  <data name="Lbl_Created"><value>Created</value></data>
+  <data name="Lbl_Updated"><value>Last Updated</value></data>
+  <data name="Lbl_StaticPressure"><value>Static Pressure (bar)</value></data>
+  <data name="Lbl_AvailableFlow"><value>Available Flow (L/min)</value></data>
+  <data name="Lbl_Elevation"><value>Elevation (m)</value></data>
+  <data name="Lbl_ZoneName"><value>Zone Name</value></data>
+  <data name="Lbl_Method"><value>Irrigation Method</value></data>
+  <data name="Lbl_Area"><value>Area (m²)</value></data>
+  <data name="Lbl_DesignPressure"><value>Design Pressure (bar)</value></data>
+  <data name="Lbl_TargetDepth"><value>Target Depth (mm)</value></data>
+  <data name="Lbl_Brand"><value>Brand</value></data>
+  <data name="Lbl_Model"><value>Model</value></data>
+  <data name="Lbl_Arc"><value>Arc (°)</value></data>
+  <data name="Lbl_Pressure"><value>Pressure (bar)</value></data>
+  <data name="Lbl_Radius"><value>Radius (m)</value></data>
+  <data name="Lbl_Flow"><value>Flow (L/min)</value></data>
+  <data name="Lbl_Precip"><value>Precip. Rate (mm/hr)</value></data>
+  <data name="Lbl_CatalogRef"><value>Catalog Ref</value></data>
+  <data name="Lbl_Zone"><value>Zone</value></data>
+  <data name="Lbl_Nozzle"><value>Nozzle</value></data>
+  <data name="Lbl_TotalFlow"><value>Total Flow (L/min)</value></data>
+  <data name="Lbl_PR"><value>Precip. Rate (mm/hr)</value></data>
+  <data name="Lbl_Runtime"><value>Runtime (min)</value></data>
+  <data name="Lbl_HeadCount"><value>Head Count</value></data>
+  <data name="Lbl_FromNode"><value>From Node</value></data>
+  <data name="Lbl_ToNode"><value>To Node</value></data>
+  <data name="Lbl_Material"><value>Material</value></data>
+  <data name="Lbl_Diameter"><value>Diameter (mm)</value></data>
+  <data name="Lbl_Length"><value>Length (m)</value></data>
+  <data name="Lbl_FittingsLength"><value>Fittings Equiv. (m)</value></data>
+  <data name="Lbl_Velocity"><value>Velocity (m/s)</value></data>
+  <data name="Lbl_HeadLoss"><value>Head Loss (m)</value></data>
+  <data name="Lbl_PressureDrop"><value>Pressure Drop (bar)</value></data>
+  <data name="Lbl_NodePressure"><value>Node Pressure (bar)</value></data>
+  <data name="Lbl_NodeType"><value>Node Type</value></data>
+  <data name="Lbl_Size"><value>Size (mm)</value></data>
+  <data name="Lbl_EmitterFlow"><value>Emitter Flow (L/hr)</value></data>
+  <data name="Lbl_EmitterSpacing"><value>Emitter Spacing (m)</value></data>
+  <data name="Lbl_LineSpacing"><value>Line Spacing (m)</value></data>
+  <data name="Lbl_Product"><value>Product</value></data>
+  <data name="Lbl_Rating"><value>Rating</value></data>
+  <data name="Lbl_Issues"><value>Issues</value></data>
+  <data name="Lbl_Severity"><value>Severity</value></data>
+  <data name="Lbl_Message"><value>Message</value></data>
+  <data name="Lbl_SuggestedFix"><value>Suggested Fix</value></data>
+  <data name="Lbl_Language"><value>Language</value></data>
+  <data name="Lbl_Version"><value>Version</value></data>
+  <data name="Lbl_SelectProject"><value>Select Project</value></data>
+
+  <!-- Ratings -->
+  <data name="Rating_Good"><value>✅ Good</value></data>
+  <data name="Rating_Acceptable"><value>⚠ Acceptable</value></data>
+  <data name="Rating_NotAcceptable"><value>❌ Not Acceptable</value></data>
+
+  <!-- Dashboard -->
+  <data name="Dashboard_Title"><value>Project Dashboard</value></data>
+  <data name="Dashboard_Zones"><value>Zones</value></data>
+  <data name="Dashboard_Heads"><value>Heads</value></data>
+  <data name="Dashboard_Segments"><value>Pipe Segments</value></data>
+  <data name="Dashboard_Status"><value>Design Status</value></data>
+  <data name="Dashboard_NoProject"><value>No project loaded. Create a new project or load a sample.</value></data>
+
+  <!-- Reports -->
+  <data name="Report_ZoneSummary"><value>Zone Summary Report</value></data>
+  <data name="Report_HeadSchedule"><value>Head Schedule Report</value></data>
+  <data name="Report_Hydraulics"><value>Hydraulics Report</value></data>
+  <data name="Report_BOM"><value>Bill of Materials</value></data>
+
+  <!-- Messages -->
+  <data name="Msg_SaveSuccess"><value>Saved successfully.</value></data>
+  <data name="Msg_DeleteConfirm"><value>Are you sure you want to delete this item?</value></data>
+  <data name="Msg_ValidationError"><value>Please correct the highlighted fields.</value></data>
+  <data name="Msg_NoProject"><value>Please create or select a project first.</value></data>
+  <data name="Msg_ImportSuccess"><value>Import completed: {0} records imported.</value></data>
+  <data name="Msg_ExportSuccess"><value>Export completed: {0}</value></data>
+  <data name="Msg_CalculationDone"><value>Calculations completed.</value></data>
+  <data name="Msg_SampleLoaded"><value>Sample project loaded successfully.</value></data>
+  <data name="Msg_LoopDetected"><value>Loop detected in pipe network. Tree networks only in v1.</value></data>
+</root>

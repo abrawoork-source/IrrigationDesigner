@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+
+  <!-- App -->
+  <data name="AppTitle"><value>برنامج تصميم الري الاحترافي</value></data>
+  <data name="AppSubtitle"><value>أداة تصميم شبكات الري الاحترافية</value></data>
+
+  <!-- Navigation -->
+  <data name="Nav_Dashboard"><value>لوحة التحكم</value></data>
+  <data name="Nav_WaterSource"><value>مصدر المياه</value></data>
+  <data name="Nav_Zones"><value>المناطق</value></data>
+  <data name="Nav_NozzleDatabase"><value>قاعدة بيانات الرشاشات</value></data>
+  <data name="Nav_DripDatabase"><value>قاعدة بيانات التنقيط</value></data>
+  <data name="Nav_Heads"><value>جدول الرؤوس</value></data>
+  <data name="Nav_PipeNetwork"><value>شبكة الأنابيب</value></data>
+  <data name="Nav_Calculations"><value>الحسابات</value></data>
+  <data name="Nav_Evaluation"><value>فحص التصميم</value></data>
+  <data name="Nav_Reports"><value>التقارير والتصدير</value></data>
+
+  <!-- Common -->
+  <data name="Btn_Save"><value>حفظ</value></data>
+  <data name="Btn_Cancel"><value>إلغاء</value></data>
+  <data name="Btn_Add"><value>إضافة</value></data>
+  <data name="Btn_Edit"><value>تعديل</value></data>
+  <data name="Btn_Delete"><value>حذف</value></data>
+  <data name="Btn_Import"><value>استيراد CSV</value></data>
+  <data name="Btn_Export"><value>تصدير</value></data>
+  <data name="Btn_Calculate"><value>احسب</value></data>
+  <data name="Btn_DesignCheck"><value>⚙ فحص التصميم</value></data>
+  <data name="Btn_ExportJson"><value>تصدير نسخة المشروع (JSON)</value></data>
+  <data name="Btn_ImportJson"><value>استيراد مشروع (JSON)</value></data>
+  <data name="Btn_LoadSample"><value>تحميل مشروع تجريبي</value></data>
+  <data name="Btn_NewProject"><value>مشروع جديد</value></data>
+  <data name="Btn_ExportExcel"><value>تصدير Excel</value></data>
+  <data name="Btn_ExportPdf"><value>تصدير PDF</value></data>
+
+  <!-- Labels -->
+  <data name="Lbl_ProjectName"><value>اسم المشروع</value></data>
+  <data name="Lbl_Units"><value>وحدات القياس</value></data>
+  <data name="Lbl_Notes"><value>ملاحظات</value></data>
+  <data name="Lbl_Created"><value>تاريخ الإنشاء</value></data>
+  <data name="Lbl_Updated"><value>آخر تحديث</value></data>
+  <data name="Lbl_StaticPressure"><value>الضغط الساكن (بار)</value></data>
+  <data name="Lbl_AvailableFlow"><value>التدفق المتاح (ل/د)</value></data>
+  <data name="Lbl_Elevation"><value>الارتفاع (م)</value></data>
+  <data name="Lbl_ZoneName"><value>اسم المنطقة</value></data>
+  <data name="Lbl_Method"><value>طريقة الري</value></data>
+  <data name="Lbl_Area"><value>المساحة (م²)</value></data>
+  <data name="Lbl_DesignPressure"><value>ضغط التصميم (بار)</value></data>
+  <data name="Lbl_TargetDepth"><value>العمق المستهدف (مم)</value></data>
+  <data name="Lbl_Brand"><value>العلامة التجارية</value></data>
+  <data name="Lbl_Model"><value>الموديل</value></data>
+  <data name="Lbl_Arc"><value>الزاوية (°)</value></data>
+  <data name="Lbl_Pressure"><value>الضغط (بار)</value></data>
+  <data name="Lbl_Radius"><value>نصف القطر (م)</value></data>
+  <data name="Lbl_Flow"><value>التدفق (ل/د)</value></data>
+  <data name="Lbl_Precip"><value>معدل الهطول (مم/ساعة)</value></data>
+  <data name="Lbl_CatalogRef"><value>مرجع الكتالوج</value></data>
+  <data name="Lbl_Zone"><value>المنطقة</value></data>
+  <data name="Lbl_Nozzle"><value>الرشاش</value></data>
+  <data name="Lbl_TotalFlow"><value>إجمالي التدفق (ل/د)</value></data>
+  <data name="Lbl_PR"><value>معدل الهطول (مم/ساعة)</value></data>
+  <data name="Lbl_Runtime"><value>وقت التشغيل (دقيقة)</value></data>
+  <data name="Lbl_HeadCount"><value>عدد الرؤوس</value></data>
+  <data name="Lbl_FromNode"><value>من العقدة</value></data>
+  <data name="Lbl_ToNode"><value>إلى العقدة</value></data>
+  <data name="Lbl_Material"><value>المادة</value></data>
+  <data name="Lbl_Diameter"><value>القطر (مم)</value></data>
+  <data name="Lbl_Length"><value>الطول (م)</value></data>
+  <data name="Lbl_FittingsLength"><value>وصلات مكافئة (م)</value></data>
+  <data name="Lbl_Velocity"><value>السرعة (م/ث)</value></data>
+  <data name="Lbl_HeadLoss"><value>فقد الضغط (م)</value></data>
+  <data name="Lbl_PressureDrop"><value>انخفاض الضغط (بار)</value></data>
+  <data name="Lbl_NodePressure"><value>ضغط العقدة (بار)</value></data>
+  <data name="Lbl_NodeType"><value>نوع العقدة</value></data>
+  <data name="Lbl_Size"><value>الحجم (مم)</value></data>
+  <data name="Lbl_EmitterFlow"><value>تدفق المُنبثِق (ل/ساعة)</value></data>
+  <data name="Lbl_EmitterSpacing"><value>مسافة المُنبثِق (م)</value></data>
+  <data name="Lbl_LineSpacing"><value>مسافة الخط (م)</value></data>
+  <data name="Lbl_Product"><value>المنتج</value></data>
+  <data name="Lbl_Rating"><value>التقييم</value></data>
+  <data name="Lbl_Issues"><value>المشكلات</value></data>
+  <data name="Lbl_Severity"><value>الخطورة</value></data>
+  <data name="Lbl_Message"><value>الرسالة</value></data>
+  <data name="Lbl_SuggestedFix"><value>الحل المقترح</value></data>
+  <data name="Lbl_Language"><value>اللغة</value></data>
+  <data name="Lbl_Version"><value>الإصدار</value></data>
+  <data name="Lbl_SelectProject"><value>اختر المشروع</value></data>
+
+  <!-- Ratings -->
+  <data name="Rating_Good"><value>✅ جيد</value></data>
+  <data name="Rating_Acceptable"><value>⚠ مقبول</value></data>
+  <data name="Rating_NotAcceptable"><value>❌ غير مقبول</value></data>
+
+  <!-- Dashboard -->
+  <data name="Dashboard_Title"><value>لوحة تحكم المشروع</value></data>
+  <data name="Dashboard_Zones"><value>المناطق</value></data>
+  <data name="Dashboard_Heads"><value>الرؤوس</value></data>
+  <data name="Dashboard_Segments"><value>قطاعات الأنابيب</value></data>
+  <data name="Dashboard_Status"><value>حالة التصميم</value></data>
+  <data name="Dashboard_NoProject"><value>لا يوجد مشروع محمّل. أنشئ مشروعاً جديداً أو حمّل المشروع التجريبي.</value></data>
+
+  <!-- Reports -->
+  <data name="Report_ZoneSummary"><value>تقرير ملخص المناطق</value></data>
+  <data name="Report_HeadSchedule"><value>جدول الرؤوس</value></data>
+  <data name="Report_Hydraulics"><value>تقرير الهيدروليكا</value></data>
+  <data name="Report_BOM"><value>قائمة المواد</value></data>
+
+  <!-- Messages -->
+  <data name="Msg_SaveSuccess"><value>تم الحفظ بنجاح.</value></data>
+  <data name="Msg_DeleteConfirm"><value>هل أنت متأكد من حذف هذا العنصر؟</value></data>
+  <data name="Msg_ValidationError"><value>يرجى تصحيح الحقول المميزة.</value></data>
+  <data name="Msg_NoProject"><value>يرجى إنشاء مشروع أو اختياره أولاً.</value></data>
+  <data name="Msg_ImportSuccess"><value>اكتمل الاستيراد: {0} سجلات.</value></data>
+  <data name="Msg_ExportSuccess"><value>اكتمل التصدير: {0}</value></data>
+  <data name="Msg_CalculationDone"><value>اكتملت الحسابات.</value></data>
+  <data name="Msg_SampleLoaded"><value>تم تحميل المشروع التجريبي بنجاح.</value></data>
+  <data name="Msg_LoopDetected"><value>تم اكتشاف حلقة في شبكة الأنابيب. الإصدار الأول يدعم الشبكات الشجرية فقط.</value></data>
+</root>

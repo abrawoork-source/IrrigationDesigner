@@ -1,0 +1,56 @@
+<!-- File: src/IrrigationApp/Views/HeadsView.xaml -->
+<UserControl x:Class="IrrigationApp.Views.HeadsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="28,24,28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="💦 " FontSize="22"/>
+            <TextBlock Text="{Binding L_Title}" Style="{StaticResource PageTitle}" Margin="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="{Binding L_Add}"    Command="{Binding AddCommand}"
+                    Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Delete}" Command="{Binding DeleteCommand}"
+                    Style="{StaticResource DangerButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Save}"   Command="{Binding SaveCommand}"
+                    Style="{StaticResource SuccessButton}"/>
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource SuccessBrush}"
+                       VerticalAlignment="Center" Margin="16,0,0,0" FontSize="12"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Heads}"
+                  SelectedItem="{Binding SelectedHead}"
+                  Style="{StaticResource ModernDataGrid}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"                 Binding="{Binding Id}"         Width="50" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Zone,   RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding ZoneName}"  Width="150" IsReadOnly="True"/>
+                <DataGridComboBoxColumn Header="{Binding DataContext.L_Zone, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        SelectedValueBinding="{Binding ZoneId}"
+                                        SelectedValuePath="Id"
+                                        DisplayMemberPath="Name"
+                                        ItemsSource="{Binding DataContext.Zones, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        Width="150"/>
+                <DataGridComboBoxColumn Header="{Binding DataContext.L_Nozzle, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        SelectedValueBinding="{Binding NozzleId}"
+                                        SelectedValuePath="Id"
+                                        DisplayMemberPath="Model"
+                                        ItemsSource="{Binding DataContext.Nozzles, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        Width="200"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Flow, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Flow_Lmin, StringFormat='{}{0:F2}'}" Width="100" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Notes, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Notes}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

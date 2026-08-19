@@ -1,0 +1,96 @@
+<!-- File: src/IrrigationApp/Views/ZonesView.xaml -->
+<UserControl x:Class="IrrigationApp.Views.ZonesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="28,24,28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="🗺 " FontSize="22"/>
+            <TextBlock Text="{Binding L_Title}" Style="{StaticResource PageTitle}" Margin="0"/>
+        </StackPanel>
+
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="{Binding L_Add}"    Command="{Binding AddCommand}"
+                    Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Delete}" Command="{Binding DeleteCommand}"
+                    Style="{StaticResource DangerButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Save}"   Command="{Binding SaveCommand}"
+                    Style="{StaticResource SuccessButton}"/>
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource SuccessBrush}"
+                       VerticalAlignment="Center" Margin="16,0,0,0" FontSize="12"/>
+        </StackPanel>
+
+        <!-- Data Grid -->
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Zones}"
+                  SelectedItem="{Binding SelectedZone}"
+                  Style="{StaticResource ModernDataGrid}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"          Binding="{Binding Id}"
+                                    Width="50" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_ZoneName,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Name}" Width="*"/>
+                <DataGridComboBoxColumn Header="{Binding DataContext.L_Method,
+                                            RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        SelectedItemBinding="{Binding Method}"
+                                        ItemsSource="{Binding DataContext.Methods,
+                                            RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                        Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Area,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Area_m2, StringFormat='{}{0:F1}'}" Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_DesignPressure,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding DesignPressure_bar, StringFormat='{}{0:F2}'}" Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_TargetDepth,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding TargetDepth_mm, StringFormat='{}{0:F1}'}" Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Notes,
+                                        RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Notes}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Detail Form for selected zone -->
+        <Border Grid.Row="3" Style="{StaticResource Card}" Margin="0,16,0,0">
+            <StackPanel>
+                <TextBlock Text="Edit Selected Zone" Style="{StaticResource SectionTitle}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                        <TextBlock Text="{Binding L_ZoneName}" Style="{StaticResource FieldLabel}"/>
+                        <TextBox Text="{Binding SelectedZone.Name, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource ModernTextBox}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                        <TextBlock Text="{Binding L_Method}" Style="{StaticResource FieldLabel}"/>
+                        <ComboBox ItemsSource="{Binding Methods}"
+                                  SelectedItem="{Binding SelectedZone.Method}"
+                                  Style="{StaticResource ModernComboBox}"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="{Binding L_Area}" Style="{StaticResource FieldLabel}"/>
+                        <TextBox Text="{Binding SelectedZone.Area_m2, UpdateSourceTrigger=PropertyChanged}"
+                                 Style="{StaticResource ModernTextBox}"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

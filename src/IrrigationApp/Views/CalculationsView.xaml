@@ -1,0 +1,77 @@
+<!-- File: src/IrrigationApp/Views/CalculationsView.xaml -->
+<UserControl x:Class="IrrigationApp.Views.CalculationsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="28,24,28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="📐 " FontSize="22"/>
+            <TextBlock Text="{Binding L_Title}" Style="{StaticResource PageTitle}" Margin="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="{Binding L_Calculate}" Command="{Binding CalculateCommand}"
+                    Style="{StaticResource PrimaryButton}" FontSize="14" Padding="20,10"/>
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource SuccessBrush}"
+                       VerticalAlignment="Center" Margin="16,0,0,0" FontSize="12"/>
+        </StackPanel>
+
+        <!-- Zone Summary -->
+        <TextBlock Grid.Row="2" Text="Zone Summary" Style="{StaticResource SectionTitle}"/>
+        <DataGrid Grid.Row="3" ItemsSource="{Binding ZoneResults}"
+                  Style="{StaticResource ModernDataGrid}" MaxHeight="250">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Binding DataContext.L_ZoneName, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding ZoneName}" Width="*"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_HeadCount, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding HeadCount}" Width="80"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_TotalFlow,  RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding TotalFlow}" Width="180"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_PR, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding PR}" Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Runtime, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Runtime}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Hydraulics -->
+        <Border Grid.Row="4" Background="#F8FAFC" CornerRadius="6" Padding="12,8" Margin="0,16,0,8">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Hydraulics: " FontWeight="SemiBold" FontSize="13"
+                           Foreground="{StaticResource TextPrimaryBrush}"/>
+                <TextBlock Text="{Binding HydraulicsStatus}" FontSize="13"
+                           Foreground="{StaticResource TextSecondaryBrush}"/>
+            </StackPanel>
+        </Border>
+        <DataGrid Grid.Row="5" ItemsSource="{Binding SegmentResults}"
+                  Style="{StaticResource ModernDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Seg"  Binding="{Binding SegmentId}"  Width="50"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_FromNode, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding FromNodeId}" Width="70"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_ToNode, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding ToNodeId}"   Width="70"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Diameter, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Diameter}"  Width="80"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Flow, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Flow}"      Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Velocity, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding Velocity}"  Width="90"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_HeadLoss, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding HeadLoss}"  Width="90"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_PressDrop, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                    Binding="{Binding PressureDrop}" Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

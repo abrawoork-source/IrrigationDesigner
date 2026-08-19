@@ -1,0 +1,46 @@
+<!-- File: src/IrrigationApp/Views/DripDatabaseView.xaml -->
+<UserControl x:Class="IrrigationApp.Views.DripDatabaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="28,24,28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="🌱 " FontSize="22"/>
+            <TextBlock Text="{Binding L_Title}" Style="{StaticResource PageTitle}" Margin="0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="{Binding L_Add}"    Command="{Binding AddCommand}"
+                    Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Delete}" Command="{Binding DeleteCommand}"
+                    Style="{StaticResource DangerButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Save}"   Command="{Binding SaveCommand}"
+                    Style="{StaticResource SuccessButton}"/>
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource SuccessBrush}"
+                       VerticalAlignment="Center" Margin="16,0,0,0" FontSize="12"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Products}"
+                  SelectedItem="{Binding SelectedProduct}"
+                  Style="{StaticResource ModernDataGrid}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"    Binding="{Binding Id}"              Width="50" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Brand,           RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Brand}"            Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Product,         RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Product}"          Width="150"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_EmitterFlow,     RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding EmitterFlow_Lph,   StringFormat='{}{0:F2}'}" Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_EmitterSpacing,  RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding EmitterSpacing_m, StringFormat='{}{0:F2}'}" Width="130"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_LineSpacing,     RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding LineSpacing_m,    StringFormat='{}{0:F2}'}" Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Pressure,        RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Pressure_bar,     StringFormat='{}{0:F2}'}" Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Notes,           RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Notes}"            Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

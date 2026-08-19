@@ -1,0 +1,83 @@
+<!-- File: src/IrrigationApp/Views/NozzleDatabaseView.xaml -->
+<UserControl x:Class="IrrigationApp.Views.NozzleDatabaseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="28,24,28,24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,16">
+            <TextBlock Text="💧 " FontSize="22"/>
+            <TextBlock Text="{Binding L_Title}" Style="{StaticResource PageTitle}" Margin="0"/>
+        </StackPanel>
+
+        <!-- Filters -->
+        <Grid Grid.Row="1" Margin="0,0,0,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0,0,12,0">
+                <TextBlock Text="Filter by Brand" Style="{StaticResource FieldLabel}"/>
+                <TextBox Text="{Binding FilterBrand, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource ModernTextBox}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="0,0,12,0">
+                <TextBlock Text="Filter by Method" Style="{StaticResource FieldLabel}"/>
+                <ComboBox ItemsSource="{Binding MethodOptions}"
+                          SelectedItem="{Binding FilterMethod}"
+                          Style="{StaticResource ModernComboBox}"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Toolbar -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,12">
+            <Button Content="{Binding L_Add}"    Command="{Binding AddCommand}"
+                    Style="{StaticResource PrimaryButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Delete}" Command="{Binding DeleteCommand}"
+                    Style="{StaticResource DangerButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Save}"   Command="{Binding SaveCommand}"
+                    Style="{StaticResource SuccessButton}" Margin="0,0,8,0"/>
+            <Button Content="{Binding L_Import}" Command="{Binding ImportCommand}"
+                    Style="{StaticResource SecondaryButton}"/>
+            <TextBlock Text="{Binding StatusMessage}"
+                       Foreground="{StaticResource SuccessBrush}"
+                       VerticalAlignment="Center" Margin="16,0,0,0" FontSize="12"/>
+        </StackPanel>
+
+        <!-- Grid -->
+        <DataGrid Grid.Row="3" ItemsSource="{Binding Nozzles}"
+                  SelectedItem="{Binding SelectedNozzle}"
+                  Style="{StaticResource ModernDataGrid}"
+                  IsReadOnly="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"          Binding="{Binding Id}"           Width="50" IsReadOnly="True"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Brand,   RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Brand}"       Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Method,  RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Method}"      Width="80"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Model,   RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Model}"       Width="120"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Arc,     RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Arc_deg,      StringFormat='{}{0:F0}'}"  Width="60"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Pressure, RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Pressure_bar, StringFormat='{}{0:F2}'}" Width="90"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Radius,  RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Radius_m,     StringFormat='{}{0:F2}'}" Width="80"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Flow,    RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Flow_Lmin,    StringFormat='{}{0:F2}'}" Width="80"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_Precip,  RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding Precip_mmhr,  StringFormat='{}{0:F2}'}" Width="100"/>
+                <DataGridTextColumn Header="{Binding DataContext.L_CatalogRef, RelativeSource={RelativeSource AncestorType=UserControl}}" Binding="{Binding CatalogRef}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- CSV Format hint -->
+        <Border Grid.Row="4" Background="#F0FDF4" CornerRadius="6" Padding="12" Margin="0,12,0,0">
+            <TextBlock FontSize="11" Foreground="#15803D" TextWrapping="Wrap">
+                <Run FontWeight="SemiBold">CSV Import Format:</Run>
+                <Run Text=" Brand, Method, Model, Arc_deg, Pressure_bar, Radius_m, Flow_Lmin, Precip_mmhr (optional), CatalogRef (optional)"/>
+            </TextBlock>
+        </Border>
+    </Grid>
+</UserControl>

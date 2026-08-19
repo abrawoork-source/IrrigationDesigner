@@ -1,0 +1,40 @@
+name: Build WPF (Windows)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore IrrigationDesigner.sln
+
+      - name: Build
+        run: dotnet build IrrigationDesigner.sln -c Release --no-restore
+
+      - name: Test
+        run: dotnet test IrrigationDesigner.sln -c Release --no-build
+
+      - name: Publish EXE (Self-contained)
+        shell: pwsh
+        run: |
+          dotnet publish src/IrrigationApp/IrrigationApp.csproj `
+            -c Release -r win-x64 --self-contained true `
+            /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true `
+            -o publish
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: IrrigationApp-win-x64
+          path: publish

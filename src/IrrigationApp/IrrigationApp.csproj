@@ -10,7 +10,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>IrrigationApp</AssemblyName>
     <RootNamespace>IrrigationApp</RootNamespace>
-    <ApplicationIcon>Resources\irrigation.ico</ApplicationIcon>
+   
     <StartupObject>IrrigationApp.App</StartupObject>
     <Platforms>AnyCPU</Platforms>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
